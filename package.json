@@ -25,6 +25,7 @@
   "homepage": "https://github.com/acheng16/AdService#readme",
   "dependencies": {
     "body-parser": "^1.17.1",
-    "express": "^4.15.2"
+    "express": "^4.15.2",
+    "foreverjs": "^1.0.6"
   }
 }
