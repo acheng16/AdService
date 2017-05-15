@@ -6,6 +6,9 @@ var router = function(app) {
     }
     return res.send(response);
   })
+  app.get("/api/v1/helloworld", function(req, res){
+    return res.send("Hello World");
+  })
 }
 
 module.exports = router;

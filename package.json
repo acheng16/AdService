@@ -18,14 +18,13 @@
     "NPM"
   ],
   "author": "Andrew Cheng",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/acheng16/AdService/issues"
   },
   "homepage": "https://github.com/acheng16/AdService#readme",
   "dependencies": {
     "body-parser": "^1.17.1",
-    "express": "^4.15.2",
-    "long": "^3.2.0"
+    "express": "^4.15.2"
   }
 }
