@@ -2,7 +2,11 @@
 
 ### Overview
 
-This is a simple RESFUL node.js service that is dockerized and compatible with jenkins multi-branch pipeline.
+This is a simple RESFUL node.js service that is dockerized and compatible with jenkins multi-branch pipeline. It is also tested using the NPM mocha library.
+
+### Tech-Stack Explanation
+
+For such a simple application that we are creating only a POST service at a specific endpoint. NodeJS is the most light weight and fast framework to create the service. The code is sweet and concise versus different languages. The vast amount of NPM libraries available also makes this task very easy. Mocha was used because of the ease of writing test cases with it. Jenkins was chosen because of my experience in it as well as Target's use in the tool. The feature jenkins pipelining allows us to visualize build phases as well as separate branches and pull requests. Docker was chosen since it is a leader in open-source containerization solutions as well as the ease to share the dockerized image.
 
 ### Installation
 
@@ -41,12 +45,12 @@ ssh into box using Security Key
 
 ##### Jenkins Multibranch Pipeline Job
 1. New Item -> Multibranch Pipeline
-2. Branch Source -> GitHub, use github credentials and owner. 
+2. Branch Source -> GitHub, use github credentials and owner.
 3. Mode -> by Jenkinsfile
 4. Select your Repository
 5. Save
 
-##### Setting up DockerHub 
+##### Setting up DockerHub
 1. Navigate to dockerhub.com
 2. Create a login
 3. Create a repository (this is referred to in Jenkinsfile)
@@ -61,11 +65,27 @@ ssh into box using Security Key
 6. sudo service docker restart
 7. sudo service jenkins restart
 
+### Usage (Running Locally)
+
+##### Via Container
+1. docker pull andrewcheng/adservice
+2. docker run -d -p 80:80 --name adservice andrewcheng/adservice
+
+##### Via Non-Container
+1. git clone https://github.com/acheng16/AdService
+2. npm install
+3. node server.js (runs on port 80)
+
+##### Running Tests
+1. npm test
+
 ### Dependencies
 
 ##### node dependencies
 1. Express
 2. Body-Parser
+3. Mocha
+4. Random-JS
 
 ##### Jenkins dependencies
 1. DockerHub
@@ -75,12 +95,20 @@ ssh into box using Security Key
 ### API Reference
 ##### GET /
 response: hello world
-##### GET /api/v1/helloworld
-response: hello world
 ##### POST /api/v1/user
 request: user_id
 
-response: random int from 0-999
+response: random int from 0-4294967295
+
+### Future Features
+##### Jenkinsfile
+Customize jenkinsfile to have capabilities to support multiple types of builds. Not just nodejs, but java, scala, html/css, js, etc.
+
+##### Docker Deploy
+Ability to deploy to any server not just the server that jenkins is hosted upon
+
+##### Tests
+Leverage different testing framework such as Selenium, JUnit for Java, etc.
 
 ### Contributors
 Andrew Cheng

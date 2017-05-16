@@ -33,6 +33,7 @@ describe("USER ID", function() {
       });
     });
 
+    //checks if number is between 0 and 4294967295
     it("returns a 1^32-1 number", function(done) {
       request.post(base_url + 'api/v1/user', {json: { 'userId' : "123" } }, function(error, response, body) {
         //expect(body).toBe("Hello World");

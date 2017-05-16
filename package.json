@@ -15,7 +15,11 @@
     "CI",
     "CD",
     "Target",
-    "NPM"
+    "NPM",
+    "Jenkins Pipeline",
+    "AWS",
+    "Docker",
+    "GitHub"
   ],
   "author": "Andrew Cheng",
   "license": "MIT",
@@ -26,11 +30,7 @@
   "dependencies": {
     "body-parser": "^1.17.1",
     "express": "^4.15.2",
-    "foreverjs": "^1.0.6",
     "random-js": "^1.0.8",
     "request": "^2.81.0"
-  },
-  "devDependencies": {
-    "should": "^11.2.1"
   }
 }
