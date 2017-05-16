@@ -83,7 +83,7 @@ ssh into box using Security Key
 
 ### Dependencies
 
-##### node dependencies
+##### Node dependencies
 1. Express
 2. Body-Parser
 3. Mocha
@@ -102,6 +102,9 @@ request: user_id
 
 response: random int from 0-4294967295
 
+### Observations
+It is really easy to build the application in NodeJS with very few lines of code as well as test it with the library mocha from NodeJS. Generating a random number was semi-difficult due to the lack of Long datatype in Node. I decided to leverage the community library Random-JS for this reason. Jenkins was a painpoint to install due to the Java versioning issues. The ami from Amazon had JDK 1.7 installed, however, Jenkins required JDK 1.8. Also giving Jenkins permissions to run docker commands also took a little googling around.
+
 ### Future Features
 ##### Jenkinsfile
 Customize Jenkinsfile to have capabilities to support multiple types of builds. Not just nodejs, but java, scala, html/css, js, etc
@@ -115,8 +118,14 @@ Ability to deploy to any server not just the server that Jenkins is hosted upon
 ##### Docker
 Add multiple slaves for Docker
 
+##### Node Server
+Ability to specificy what port to deploy on from a Proporties file
+
+##### Server
+Research and integrate a new size for the EC2 Server in order to process Jenkins and Docker faster
+
 ##### Tests
-Leverage different testing framework such as Selenium, JUnit for Java, etc.
+Leverage different testing framework such as Selenium, JUnit for Java, etc
 
 ### Contributors
 Andrew Cheng
