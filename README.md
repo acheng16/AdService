@@ -74,7 +74,9 @@ ssh into box using Security Key
 ##### Via Non-Container
 1. git clone https://github.com/acheng16/AdService
 2. npm install
-3. node server.js (runs on port 80)
+3. npm install -g mocha
+4. npm install request --save
+5. node server.js (runs on port 80)
 
 ##### Running Tests
 1. npm test
