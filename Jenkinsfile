@@ -12,7 +12,7 @@ node {
 
     stage('Test image') {
         app.inside {
-            sh 'npm list'
+            sh 'npm install'
             sh 'npm install -g mocha'
             sh 'npm install request --save'
             sh 'npm test'
