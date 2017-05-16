@@ -23,6 +23,6 @@ node {
         sh 'docker pull andrewcheng/adservice'
         sh 'docker stop $(docker ps -a -q)'
         sh 'docker rm $(docker ps -a -q)'
-        sh 'docker run -d -p 80:80 --name adservice andrewcheng/adservice'
+        sh 'docker run -d -p 80:80 andrewcheng/adservice'
     }
 }
