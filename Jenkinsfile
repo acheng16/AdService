@@ -21,7 +21,8 @@ node {
 
     stage("Run Image") {
         sh 'docker pull andrewcheng/adservice'
-        sh 'docker rm -f adservice || true'
-        sh 'docker run -d -p 80:80 --name adservice andrewcheng/adservice'
+        sh 'docker stop $(docker ps -a -q)'
+        sh 'docker rm $(docker ps -a -q)'
+        sh 'docker run -d -p 80:80 andrewcheng/adservice'
     }
 }
