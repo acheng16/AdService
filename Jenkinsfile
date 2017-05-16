@@ -7,7 +7,7 @@ node {
     }
 
     stage('Docker Build Image') {
-        app = docker.build("adservice")
+        app = docker.build("andrewcheng/adservice")
     }
 
     stage('Test image') {
