@@ -30,6 +30,6 @@ node {
     stage("Run Image") {
         sh 'docker pull andrewcheng/adservice'
         sh 'docker rm -f adservice || true'
-        sh 'docker run -d -p 8000:80 --name adservice andrewcheng/adservice'
+        sh 'docker run -d -p 80:5000 --name adservice andrewcheng/adservice'
     }
 }
