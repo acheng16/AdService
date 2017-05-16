@@ -107,13 +107,19 @@ It is really easy to build the application in NodeJS with very few lines of code
 
 ### Future Features
 ##### Jenkinsfile
-Customize jenkinsfile to have capabilities to support multiple types of builds. Not just nodejs, but java, scala, html/css, js, etc.
+Customize jenkinsfile to have capabilities to support multiple types of builds. Not just nodejs, but java, scala, html/css, js, etc
 
 ##### Docker Deploy
 Ability to deploy to any server not just the server that jenkins is hosted upon
 
+##### Node Server
+Ability to specificy what port to deploy on from a Proporties file
+
+##### Server
+Research and integrate a new size for the EC2 Server in order to process Jenkins and Docker faster
+
 ##### Tests
-Leverage different testing framework such as Selenium, JUnit for Java, etc.
+Leverage different testing framework such as Selenium, JUnit for Java, etc
 
 ### Contributors
 Andrew Cheng
