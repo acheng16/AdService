@@ -9,6 +9,7 @@ COPY package.json /usr/src/app/
 RUN npm install
 RUN npm install -g mocha
 RUN npm install request --save
+RUN npm test
 
 # Bundle app source
 COPY . /usr/src/app

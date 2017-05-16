@@ -6,17 +6,8 @@ node {
         checkout scm
     }
 
-    stage('Build Image') {
+    stage('Build & Test Image') {
         app = docker.build("andrewcheng/adservice")
-    }
-
-    stage('Test image') {
-        app.inside {
-            sh 'npm install'
-            sh 'npm install -g mocha'
-            sh 'npm install request --save'
-            sh 'npm test'
-        }
     }
 
     stage('Push image') {
