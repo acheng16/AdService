@@ -10,6 +10,8 @@ COPY package.json /usr/src/app/
 
 # Bundle app source
 COPY . /usr/src/app
+
+# NPM installs and Run Test
 RUN npm install
 RUN npm install -g mocha
 RUN npm install request --save
