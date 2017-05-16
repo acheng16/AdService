@@ -23,6 +23,7 @@ node {
          * Pushing multiple tags is cheap, as all the layers are reused. */
         docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-creds') {
             app.push("${env.BUILD_NUMBER}")
+            app.push("${env.GIT_BRANCH}")
             app.push("latest")
         }
     }
