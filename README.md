@@ -8,6 +8,10 @@ This is a simple RESFUL node.js service that is dockerized and compatible with j
 
 For such a simple application that we are creating only a POST service at a specific endpoint. NodeJS is the most light weight and fast framework to create the service. The code is sweet and concise versus different languages. The vast amount of NPM libraries available also makes this task very easy. Mocha was used because of the ease of writing test cases with it. Jenkins was chosen because of my experience in it as well as Target's use in the tool. The feature jenkins pipelining allows us to visualize build phases as well as separate branches and pull requests. Docker was chosen since it is a leader in open-source containerization solutions as well as the ease to share the dockerized image.
 
+### Summary
+
+First I logged on to my AWS account. Then I created an EC2 instance of size t2.small with security group that openned up the correct ports. I also assigned the EC2 instance a public ip address inorder to hit the Jenkins Instance. I updated Java to 1.8 as well as download and install Jenkins and Docker. After that I logged into Jenkins and installed all the proper plugins including NodeJS, Docker, and multi-pipeline tool. Next I created and configured the multipipeline job. Docker was installed after the multipipeline tool and configured to give Jenkins and EC2 user access. After that I coded the NodeJS application as well as installed the proper libraries needed to run the service. I tested my service locally via Postman. Then, I then pushed my code to GitHub and made sure the Jenkins deployed it to Docker Hub properly. After that, I tested the dockerized image on the server using Postman. I then thought of automating tests by using the Mocha NPM library to test my REST API endpoints. After creating the tests I pushed up the code and added the npm test to my Dockerfile. 
+
 ### Installation
 
 Build an AWS EC2 linux instance (tested with default Amazon linux ami).
@@ -83,7 +87,7 @@ ssh into box using Security Key
 
 ### Dependencies
 
-##### node dependencies
+##### Node dependencies
 1. Express
 2. Body-Parser
 3. Mocha
@@ -102,15 +106,30 @@ request: user_id
 
 response: random int from 0-4294967295
 
+### Observations
+It is really easy to build the application in NodeJS with very few lines of code as well as test it with the library mocha from NodeJS. Generating a random number was semi-difficult due to the lack of Long datatype in Node. I decided to leverage the community library Random-JS for this reason. Jenkins was a painpoint to install due to the Java versioning issues. The ami from Amazon had JDK 1.7 installed, however, Jenkins required JDK 1.8. Also giving Jenkins permissions to run docker commands also took a little googling around.
+
 ### Future Features
 ##### Jenkinsfile
-Customize jenkinsfile to have capabilities to support multiple types of builds. Not just nodejs, but java, scala, html/css, js, etc.
+Customize Jenkinsfile to have capabilities to support multiple types of builds. Not just nodejs, but java, scala, html/css, js, etc
+
+##### Jenkins
+Add multiple slaves for Jenkins
 
 ##### Docker Deploy
-Ability to deploy to any server not just the server that jenkins is hosted upon
+Ability to deploy to any server not just the server that Jenkins is hosted upon
+
+##### Docker
+Add multiple slaves for Docker
+
+##### Node Server
+Ability to specificy what port to deploy on from a Proporties file
+
+##### Server
+Research and integrate a new size for the EC2 Server in order to process Jenkins and Docker faster
 
 ##### Tests
-Leverage different testing framework such as Selenium, JUnit for Java, etc.
+Leverage different testing framework such as Selenium, JUnit for Java, etc
 
 ### Contributors
 Andrew Cheng
