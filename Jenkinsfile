@@ -6,7 +6,7 @@ node {
         checkout scm
     }
 
-    stage('Docker Build Image') {
+    stage('Build Image') {
         app = docker.build("andrewcheng/adservice")
     }
 
@@ -25,5 +25,11 @@ node {
             app.push("${env.BUILD_NUMBER}")
             app.push("latest")
         }
+    }
+
+    stage("Run Image") {
+        sh 'docker pull andrewcheng/adservice'
+        sh 'docker rm -f adservice || true'
+        sh 'docker run -d -p 8000:80 --name adservice andrewcheng/adservice'
     }
 }
