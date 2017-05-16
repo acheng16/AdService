@@ -8,6 +8,10 @@ This is a simple RESFUL node.js service that is dockerized and compatible with j
 
 For such a simple application that we are creating only a POST service at a specific endpoint. NodeJS is the most light weight and fast framework to create the service. The code is sweet and concise versus different languages. The vast amount of NPM libraries available also makes this task very easy. Mocha was used because of the ease of writing test cases with it. Jenkins was chosen because of my experience in it as well as Target's use in the tool. The feature jenkins pipelining allows us to visualize build phases as well as separate branches and pull requests. Docker was chosen since it is a leader in open-source containerization solutions as well as the ease to share the dockerized image.
 
+### Summary
+
+First I logged on to my AWS account. Then I created an EC2 instance of size t2.small with security group that openned up the correct ports. I also assigned the EC2 instance a public ip address inorder to hit the Jenkins Instance. I updated Java to 1.8 as well as download and install Jenkins and Docker. After that I logged into Jenkins and installed all the proper plugins including NodeJS, Docker, and multi-pipeline tool. Next I created and configured the multipipeline job. Docker was installed after the multipipeline tool and configured to give Jenkins and EC2 user access. After that I coded the NodeJS application as well as installed the proper libraries needed to run the service. I tested my service locally via Postman. Then, I then pushed my code to GitHub and made sure the Jenkins deployed it to Docker Hub properly. After that, I tested the dockerized image on the server using Postman. I then thought of automating tests by using the Mocha NPM library to test my REST API endpoints. After creating the tests I pushed up the code and added the npm test to my Dockerfile. 
+
 ### Installation
 
 Build an AWS EC2 linux instance (tested with default Amazon linux ami).
