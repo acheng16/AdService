@@ -104,10 +104,16 @@ response: random int from 0-4294967295
 
 ### Future Features
 ##### Jenkinsfile
-Customize jenkinsfile to have capabilities to support multiple types of builds. Not just nodejs, but java, scala, html/css, js, etc.
+Customize Jenkinsfile to have capabilities to support multiple types of builds. Not just nodejs, but java, scala, html/css, js, etc
+
+##### Jenkins
+Add multiple slaves for Jenkins
 
 ##### Docker Deploy
-Ability to deploy to any server not just the server that jenkins is hosted upon
+Ability to deploy to any server not just the server that Jenkins is hosted upon
+
+##### Docker
+Add multiple slaves for Docker
 
 ##### Tests
 Leverage different testing framework such as Selenium, JUnit for Java, etc.
